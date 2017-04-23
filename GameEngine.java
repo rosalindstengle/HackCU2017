@@ -18,7 +18,7 @@ public class GameEngine extends Component{
 	//Variables
 	private boolean event = false, t = false, r = false, space = false;
 	BufferedImage trash, recycle;
-	Bucket[] bins;
+	Bucket[] bins = new Bucket[5];
 	
 	//Variables
 	
@@ -32,8 +32,8 @@ public class GameEngine extends Component{
 		} catch (IOException e) {
 		}
 		
-		Sidebar side = new Sidebar();
-		Bucket[] bins = new Bucket[5];
+		//Sidebar side = new Sidebar();
+		System.out.println(bins);
 		boolean[] arr = {true, false, false, false, false}; 
 		Coordinate loc = new Coordinate(Config.SCREEN_WIDTH/3 , Config.SCREEN_HEIGHT/2);
 		Coordinate size = new Coordinate(0, 0); //TODO change to be the actual size of the image.
@@ -42,14 +42,16 @@ public class GameEngine extends Component{
 		arr[0] = false; arr[1] = true;
 		loc.incrementX(Config.SCREEN_WIDTH/3);
 			bins[1] = new Bucket(arr, loc, size, recycle);
+		//System.out.println(bins[0].getLocation().getX() == null);
 	}
 	//Constructor
 	
 	//Methods
 	public void paint(Graphics g)
 	{
-		//Draw all of the non-null bins. 
+		//Draw all of the non-null bins.
 		g.drawImage(bins[0].getImage(), bins[0].getLocation().getX(), bins[0].getLocation().getY(), null);
+		g.drawImage(bins[1].getImage(), bins[1].getLocation().getX(), bins[1].getLocation().getY(), null);
 	}
 	public Dimension getPreferredSize()
 	{
