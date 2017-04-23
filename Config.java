@@ -9,9 +9,11 @@ public class Config
 	public static final int SNEAK_PEAK = 4;
 	
 	//SIZES
+	public static final int SCREEN_HEIGHT = 780;
+	public static final int SCREEN_WIDTH = 1240;
 	public static final int ITEM_SIZE = 75; 
 	public static final int SIDE_BAR_SIZE_X = 100;
-	public static final int SIDE_BAR_SIZE_Y = 780;
+	public static final int SIDE_BAR_SIZE_Y = SCREEN_HEIGHT;
 	
 	//The distance between each item in the side bar. 
 	public static final int ITEM_SPACING = 100;
